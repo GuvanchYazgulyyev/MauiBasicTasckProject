@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTutorial.MainPage"
+             
+             xmlns:viewmodel="clr-namespace:MauiTutorial.ViewModel"
+             x:DataType="viewmodel:MainViewModel">
+
+
+    <Grid RowDefinitions="100, Auto,*" ColumnDefinitions=".75*, .25*"
+          Padding="12"
+          RowSpacing="12"
+          ColumnSpacing="12">
+
+        <Image Grid.ColumnSpan="2"
+               Source="bee.png"
+               Background="Transparent"/>
+        <Entry Placeholder="Görev Yazn!" Grid.Row="1" Text="{Binding Text}"/>
+
+        <Button Text="Ekle" Grid.Row="1"
+                Grid.Column="1"
+                Command="{Binding addCommand}"/>
+
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding Items}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type x:String}">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Sil"
+                                           BackgroundColor="Red"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
+                                           CommandParameter="{Binding .}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Padding="0,5">
+                            <Frame>
+                                <Label Text="{Binding}" FontSize="20"/>
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>
