@@ -5,6 +5,9 @@
         public AppShell()
         {
             InitializeComponent();
+
+            // Yeni Sayfaları Tanımlıyoruz
+            Routing.RegisterRoute(nameof(DetailPage), typeof(DetailPage));
         }
     }
 }
