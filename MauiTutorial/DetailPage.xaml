@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTutorial.DetailPage"
+             xmlns:viewmodel="clr-namespace:MauiTutorial.ViewModel"
+             x:DataType="viewmodel:DetailViewModel"
+             Title="DetailPage">
+    <VerticalStackLayout Padding="5">
+        <Label 
+            FontSize="20"
+            Text="{Binding Text}"
+            Padding="10"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button Text="Go To Back" Command="{Binding GoBackCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>
