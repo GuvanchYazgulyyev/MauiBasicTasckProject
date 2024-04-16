@@ -26,7 +26,7 @@ namespace MauiTutorial.ViewModel
                 return;
             if (connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-                await Shell.Current.DisplayAlert("Hay Aksi!", "İnternet Baglantısı Yok!", "OK");
+                await Shell.Current.DisplayAlert("Oopps!", "You Don't Have an Internet Connection!", "OK");
                 return;
             }
             Items.Add(Text);
