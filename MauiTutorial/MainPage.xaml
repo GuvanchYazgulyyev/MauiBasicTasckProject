@@ -15,9 +15,9 @@
         <Image Grid.ColumnSpan="2"
                Source="bee.png"
                Background="Transparent"/>
-        <Entry Placeholder="Görev Yazn!" Grid.Row="1" Text="{Binding Text}"/>
+        <Entry Placeholder="Add new task!" Grid.Row="1" Text="{Binding Text}"/>
 
-        <Button Text="Ekle" Grid.Row="1"
+        <Button Text="Add" Grid.Row="1"
                 Grid.Column="1"
                 Command="{Binding addCommand}"/>
 
@@ -29,7 +29,7 @@
                     <SwipeView>
                         <SwipeView.RightItems>
                             <SwipeItems>
-                                <SwipeItem Text="Sil"
+                                <SwipeItem Text="Delet"
                                            BackgroundColor="Red"
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
                                            CommandParameter="{Binding .}"/>
